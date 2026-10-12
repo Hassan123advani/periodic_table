@@ -1,0 +1,143 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #172033;
+    text-align: center;
+    overflow-x: auto;
+}
+
+h1 {
+    color: #173b70;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #173b70;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+/* Main periodic table */
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 65px);
+    grid-template-rows: repeat(7, 85px);
+    gap: 4px;
+    width: max-content;
+    margin: 0 auto;
+}
+
+/* Each element box */
+.element {
+    border: 1px solid rgba(30, 50, 80, 0.2);
+    border-radius: 6px;
+    padding: 4px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.element:hover {
+    transform: scale(1.08);
+    border: 2px solid #173b70;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.element small {
+    font-size: 10px;
+    align-self: flex-start;
+}
+
+.element b {
+    font-size: 21px;
+    margin: 3px 0;
+}
+
+.element span {
+    font-size: 9px;
+    overflow-wrap: anywhere;
+}
+
+/* Different element colors */
+.alkali {
+    background-color: #ffb8b8;
+}
+
+.alkaline {
+    background-color: #ffd7a8;
+}
+
+.transition {
+    background-color: #ffe9a8;
+}
+
+.post {
+    background-color: #bde5ff;
+}
+
+.metalloid {
+    background-color: #c8f0d0;
+}
+
+.nonmetal {
+    background-color: #c9e5ff;
+}
+
+.halogen {
+    background-color: #d8ccff;
+}
+
+.noble {
+    background-color: #ffc9ed;
+}
+
+.lanth {
+    background-color: #c9f2ee;
+}
+
+.actin {
+    background-color: #e7d2ff;
+}
+
+/* Lanthanoids and Actinoids */
+.special-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.special-row .element {
+    width: 65px;
+    height: 85px;
+    flex-shrink: 0;
+}
+
+/* Small screen support */
+@media (max-width: 700px) {
+    body {
+        padding: 15px 8px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .periodic-table,
+    .special-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
